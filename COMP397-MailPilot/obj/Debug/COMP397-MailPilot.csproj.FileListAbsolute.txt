@@ -1,0 +1,2 @@
+G:\COMP397-MailPilot-master\COMP397-MailPilot\obj\Debug\COMP397-MailPilot.csprojResolveAssemblyReference.cache
+C:\Users\mithu\Desktop\FinalP\COMP397-MailPilot\obj\Debug\COMP397-MailPilot.csprojResolveAssemblyReference.cache
