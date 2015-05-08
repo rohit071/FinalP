@@ -126,6 +126,13 @@ module states {
                 currentState = constants.GAME_OVER_STATE;
                 stateChanged = true;
             }
+            if (this.scoreboard.score > 100) {
+                console.log("x");
+                this.game.removeAllChildren();
+                stage.removeChild(this.game);
+                currentState = constants.LEVEL_2;
+                stateChanged = true;
+            }
 
             stage.update(); // Refreshes our stage
 

@@ -105,6 +105,7 @@
     <TypeScriptCompile Include="Scripts\objects\plane.ts" />
     <TypeScriptCompile Include="Scripts\objects\scoreboard.ts" />
     <TypeScriptCompile Include="Scripts\states\gameover.ts" />
+    <TypeScriptCompile Include="Scripts\states\level2.ts" />
     <TypeScriptCompile Include="Scripts\states\gameplay.ts" />
     <TypeScriptCompile Include="Scripts\states\Help.ts" />
     <TypeScriptCompile Include="Scripts\states\menu.ts" />

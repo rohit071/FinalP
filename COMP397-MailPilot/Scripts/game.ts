@@ -19,6 +19,7 @@
 /// <reference path="states/gameplay.ts" />
 /// <reference path="states/gameover.ts" />
 /// <reference path="states/menu.ts" />
+/// <reference path="states/level2.ts" />
 
 
 // Global game Variables
@@ -40,6 +41,8 @@ var gamePlay: states.GamePlay;
 var gameOver: states.GameOver;
 var menu: states.Menu;
 var help: states.Help
+var level_2: states.level2;
+//var level_3: states.Level3
 
 var manifest = [
     { id: "cloud", src: "assets/images/bomb.png" },
@@ -138,6 +141,11 @@ function changeState(state: number): void {
             help = new states.Help();
 
             currentStateFunction = help;
+            break;
+
+        case constants.LEVEL_2:
+            level_2 = new states.level2();
+            currentStateFunction = level_2;
             break;
     }
 }
