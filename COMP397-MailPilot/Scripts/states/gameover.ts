@@ -40,6 +40,7 @@ module states {
             //Final Score Label
             this.finalScoreLabel = new objects.Label(320, 120, ("FINAL SCORE: " + currentScore));
             this.game.addChild(this.finalScoreLabel);
+            console.log(currentScore);
 
             //High Score Label
             this.highScoreLabel = new objects.Label(320, 200,("HIGH SCORE: " + highScore));

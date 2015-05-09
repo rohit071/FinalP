@@ -62,7 +62,7 @@ module states {
 
             // Add Game Container to Stage
             stage.addChild(this.game);
-            stage.cursor = "none";
+           // stage.cursor = "none";
         } // Constructor
 
 
@@ -128,6 +128,11 @@ module states {
             }
             if (this.scoreboard.score > 100) {
                 console.log("x");
+                this.scoreboard.active = false;
+                currentScore = this.scoreboard.score;
+                //if (currentScore > highScore) {
+                //    highScore = currentScore;
+                //}
                 this.game.removeAllChildren();
                 stage.removeChild(this.game);
                 currentState = constants.LEVEL_2;

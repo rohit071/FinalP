@@ -47,7 +47,7 @@ var states;
 
             // Add Game Container to Stage
             stage.addChild(this.game);
-            stage.cursor = "none";
+            // stage.cursor = "none";
         }
         // DISTANCE CHECKING METHOD
         GamePlay.prototype.distance = function (p1, p2) {
@@ -108,6 +108,12 @@ var states;
             }
             if (this.scoreboard.score > 100) {
                 console.log("x");
+                this.scoreboard.active = false;
+                currentScore = this.scoreboard.score;
+
+                //if (currentScore > highScore) {
+                //    highScore = currentScore;
+                //}
                 this.game.removeAllChildren();
                 stage.removeChild(this.game);
                 currentState = constants.LEVEL_2;

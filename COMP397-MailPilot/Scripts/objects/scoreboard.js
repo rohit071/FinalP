@@ -4,8 +4,8 @@
     var ScoreBoard = (function () {
         // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++
         function ScoreBoard(game) {
+            this.lives = 5;
             this.score = 0;
-            this.lives = 10;
             this.active = true;
 
             this._livesLabel = new createjs.Text("Lives: ", "40px Consolas", "#ffff00");

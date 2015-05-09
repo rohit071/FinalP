@@ -44,10 +44,13 @@ var states;
 
             // Instantiate Scoreboard
             this.scoreboard = new objects.ScoreBoard(this.game);
+            this.scoreboard.score = +currentScore;
+            console.log(currentScore);
+            console.log(highScore);
 
             // Add Game Container to Stage
             stage.addChild(this.game);
-            stage.cursor = "none";
+            // stage.cursor = "none";
         }
         // DISTANCE CHECKING METHOD
         level2.prototype.distance = function (p1, p2) {

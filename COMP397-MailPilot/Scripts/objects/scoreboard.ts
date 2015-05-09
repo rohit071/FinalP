@@ -9,8 +9,8 @@
 
         // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++
         constructor(game: createjs.Container) {
-            this.score = 0;
-            this.lives = 10;
+            this.lives = 5 ;
+            this.score = 0 ;
             this.active = true;
 
             this._livesLabel = new createjs.Text("Lives: ", "40px Consolas", "#ffff00");
@@ -25,7 +25,7 @@
         // PUBLIC METHODS +++++++++++++++++++++++++++++++++++++
         public update(): void {
             this._livesLabel.text = "Lives: " + this.lives;
-            this._scoreLabel.text = "Score: " + this.score;
+            this._scoreLabel.text = "Score: " + this.score ;
         }
     }
 } 

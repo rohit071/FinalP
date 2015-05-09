@@ -26,6 +26,10 @@ var currentScore = 0;
 var highScore = 0;
 var plane;
 
+//var lives: number = 5;
+//var score: number = 0;
+var level2Score;
+
 // Game State Variables
 var currentState;
 var currentStateFunction;

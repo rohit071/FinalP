@@ -30,8 +30,10 @@ var stats: Stats = new Stats();
 var currentScore = 0;
 var highScore = 0;
 var plane: objects.Plane;
+//var lives: number = 5;
+//var score: number = 0;
 
-
+var level2Score;
 // Game State Variables
 var currentState: number;
 var currentStateFunction: any;

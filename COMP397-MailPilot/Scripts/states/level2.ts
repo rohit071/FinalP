@@ -37,6 +37,7 @@ module states {
             this.plane = new objects.Plane();
             this.game.addChild(this.plane);
 
+           
             //Roadblock object
             for (var cloud = 2; cloud >= 0; cloud--) {
                 this.clouds[cloud] = new objects.Cloud();
@@ -59,10 +60,12 @@ module states {
 
             // Instantiate Scoreboard
             this.scoreboard = new objects.ScoreBoard(this.game);
-
+            this.scoreboard.score = + currentScore;
+            console.log(currentScore);
+            console.log(highScore);
             // Add Game Container to Stage
             stage.addChild(this.game);
-            stage.cursor = "none";
+           // stage.cursor = "none";
         } // Constructor
 
 
