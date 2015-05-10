@@ -109,6 +109,7 @@ var states;
             if (this.scoreboard.score > 100) {
                 console.log("x");
                 this.scoreboard.active = false;
+                createjs.Sound.stop();
                 currentScore = this.scoreboard.score;
 
                 //if (currentScore > highScore) {

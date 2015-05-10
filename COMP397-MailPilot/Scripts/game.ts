@@ -30,6 +30,7 @@ var stats: Stats = new Stats();
 var currentScore = 0;
 var highScore = 0;
 var plane: objects.Plane;
+
 //var lives: number = 5;
 //var score: number = 0;
 
@@ -44,11 +45,13 @@ var gameOver: states.GameOver;
 var menu: states.Menu;
 var help: states.Help
 var level_2: states.level2;
+
 //var level_3: states.Level3
 
 var manifest = [
-    { id: "cloud", src: "assets/images/bomb.png" },
-    { id: "island", src: "assets/images/island.png" },
+    { id: "cloud", src: "assets/images/sideplane.gif" },
+    { id: "roadblock", src: "assets/images/island.png" },
+    { id: "island", src: "assets/images/bomb.png" },
     { id: "ocean", src: "assets/images/ocean.gif" },
     { id: "plane", src: "assets/images/plane.png" },
     { id: "playButton", src: "assets/images/playButton.png" },

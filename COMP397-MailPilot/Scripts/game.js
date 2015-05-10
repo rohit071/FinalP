@@ -43,8 +43,9 @@ var level_2;
 
 //var level_3: states.Level3
 var manifest = [
-    { id: "cloud", src: "assets/images/bomb.png" },
-    { id: "island", src: "assets/images/island.png" },
+    { id: "cloud", src: "assets/images/sideplane.gif" },
+    { id: "roadblock", src: "assets/images/island.png" },
+    { id: "island", src: "assets/images/bomb.png" },
     { id: "ocean", src: "assets/images/ocean.gif" },
     { id: "plane", src: "assets/images/plane.png" },
     { id: "playButton", src: "assets/images/playButton.png" },

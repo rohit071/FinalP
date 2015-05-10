@@ -6,6 +6,7 @@
 /// <reference path="../objects/cloud.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../objects/label.ts" />
+/// <reference path="../objects/roadblock.ts" />
 
 module states {
 
@@ -16,6 +17,7 @@ module states {
         public plane: objects.Plane;
         public island: objects.Island
         public clouds: objects.Cloud[] = [];
+        public roadblocks: objects.Roadblock[] = [];
         public ocean: objects.Ocean;
         public level2Label: objects.Label;
 
@@ -39,11 +41,16 @@ module states {
 
            
             //Roadblock object
-            for (var cloud = 2; cloud >= 0; cloud--) {
+            for (var cloud = 3; cloud >= 0; cloud--) {
                 this.clouds[cloud] = new objects.Cloud();
                 this.game.addChild(this.clouds[cloud]);
             }
-            //Level 1 Label
+            //Roadblock object
+            for (var roadblock = 1; roadblock >= 0; roadblock--) {
+                this.roadblocks[roadblock] = new objects.Roadblock();
+                this.game.addChild(this.roadblocks[roadblock]);
+            }
+            //Level 2 Label
             this.level2Label = new objects.Label(220, 40, "Level 2");
             this.level2Label.font = "60px Consolas";
             this.level2Label.regX = this.level2Label.getMeasuredWidth() * 0.5;
@@ -61,8 +68,9 @@ module states {
             // Instantiate Scoreboard
             this.scoreboard = new objects.ScoreBoard(this.game);
             this.scoreboard.score = + currentScore;
-            console.log(currentScore);
-            console.log(highScore);
+            //console.log(currentScore);
+            //console.log(highScore);
+            
             // Add Game Container to Stage
             stage.addChild(this.game);
            // stage.cursor = "none";
@@ -90,6 +98,10 @@ module states {
                             this.scoreboard.score += 100;
 
                         }
+                        if (collider.name == "roadblock") {
+                            this.scoreboard.lives -= 2;
+
+                        }
                     }
                     collider.isColliding = true;
                 } else {
@@ -106,10 +118,15 @@ module states {
 
             this.plane.update();
 
-            for (var cloud = 2; cloud >= 0; cloud--) {
+            for (var cloud = 3; cloud >= 0; cloud--) {
                 this.clouds[cloud].update();
 
                 this.checkCollision(this.clouds[cloud]);
+            }
+            for (var roadblock = 1; roadblock >= 0; roadblock--) {
+                this.roadblocks[roadblock].update();
+
+                this.checkCollision(this.roadblocks[roadblock]);
             }
 
             this.checkCollision(this.island);

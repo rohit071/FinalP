@@ -6,11 +6,13 @@
 /// <reference path="../objects/cloud.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../objects/label.ts" />
+/// <reference path="../objects/roadblock.ts" />
 var states;
 (function (states) {
     var level2 = (function () {
         function level2() {
             this.clouds = [];
+            this.roadblocks = [];
             // Instantiate Game Container
             this.game = new createjs.Container();
 
@@ -26,12 +28,17 @@ var states;
             this.plane = new objects.Plane();
             this.game.addChild(this.plane);
 
-            for (var cloud = 2; cloud >= 0; cloud--) {
+            for (var cloud = 3; cloud >= 0; cloud--) {
                 this.clouds[cloud] = new objects.Cloud();
                 this.game.addChild(this.clouds[cloud]);
             }
 
-            //Level 1 Label
+            for (var roadblock = 1; roadblock >= 0; roadblock--) {
+                this.roadblocks[roadblock] = new objects.Roadblock();
+                this.game.addChild(this.roadblocks[roadblock]);
+            }
+
+            //Level 2 Label
             this.level2Label = new objects.Label(220, 40, "Level 2");
             this.level2Label.font = "60px Consolas";
             this.level2Label.regX = this.level2Label.getMeasuredWidth() * 0.5;
@@ -45,9 +52,9 @@ var states;
             // Instantiate Scoreboard
             this.scoreboard = new objects.ScoreBoard(this.game);
             this.scoreboard.score = +currentScore;
-            console.log(currentScore);
-            console.log(highScore);
 
+            //console.log(currentScore);
+            //console.log(highScore);
             // Add Game Container to Stage
             stage.addChild(this.game);
             // stage.cursor = "none";
@@ -72,6 +79,9 @@ var states;
                         if (collider.name == "island") {
                             this.scoreboard.score += 100;
                         }
+                        if (collider.name == "roadblock") {
+                            this.scoreboard.lives -= 2;
+                        }
                     }
                     collider.isColliding = true;
                 } else {
@@ -87,10 +97,15 @@ var states;
 
             this.plane.update();
 
-            for (var cloud = 2; cloud >= 0; cloud--) {
+            for (var cloud = 3; cloud >= 0; cloud--) {
                 this.clouds[cloud].update();
 
                 this.checkCollision(this.clouds[cloud]);
+            }
+            for (var roadblock = 1; roadblock >= 0; roadblock--) {
+                this.roadblocks[roadblock].update();
+
+                this.checkCollision(this.roadblocks[roadblock]);
             }
 
             this.checkCollision(this.island);
