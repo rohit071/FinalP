@@ -107,8 +107,8 @@ var states;
                 currentState = constants.GAME_OVER_STATE;
                 stateChanged = true;
             }
-            if (this.scoreboard.score > -1) {
-                console.log("x");
+            if (this.scoreboard.score > 500) {
+                //console.log("x");
                 this.scoreboard.active = false;
                 createjs.Sound.stop();
                 currentScore = this.scoreboard.score;

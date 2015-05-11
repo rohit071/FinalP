@@ -146,7 +146,7 @@ module states {
                 currentState = constants.GAME_OVER_STATE;
                 stateChanged = true;
             }
-            if (this.scoreboard.score > 1) {
+            if (this.scoreboard.score > 1000) {
                 console.log("x");
                 this.scoreboard.active = false;
                 createjs.Sound.stop();

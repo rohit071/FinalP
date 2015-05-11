@@ -80,7 +80,7 @@ var states;
                             this.scoreboard.score += 100;
                         }
                         if (collider.name == "roadblock") {
-                            this.scoreboard.lives -= 5;
+                            this.scoreboard.lives -= 3;
                         }
                     }
                     collider.isColliding = true;

@@ -10,16 +10,18 @@
 /// <reference path="objects/plane.ts" />
 /// <reference path="objects/island.ts" />
 /// <reference path="objects/cloud.ts" />
+/// <reference path="objects/city.ts" />
 /// <reference path="objects/ocean.ts" />
 /// <reference path="objects/button.ts" />
 /// <reference path="objects/label.ts" />
 /// <reference path="objects/car.ts" />
+/// <reference path="objects/fire.ts" />
+/// <reference path="objects/boss.ts" />
 /// <reference path="states/gameplay.ts" />
 /// <reference path="states/gameover.ts" />
 /// <reference path="states/menu.ts" />
 /// <reference path="states/level2.ts" />
 /// <reference path="states/level3.ts" />
-/// <reference path="objects/fire.ts" />
 // Global game Variables
 var canvas;
 var stage;
@@ -53,9 +55,11 @@ var level_3;
 var manifest = [
     { id: "cloud", src: "assets/images/enemy.png" },
     { id: "car", src: "assets/images/car.png" },
+    { id: "boss", src: "assets/images/car.png" },
+    { id: "city", src: "assets/images/city.png" },
     { id: "bullet", src: "assets/images/bullet.png" },
     { id: "roadblock", src: "assets/images/island.png" },
-    { id: "island", src: "assets/images/bomb.png" },
+    { id: "island", src: "assets/images/gas.jpg" },
     { id: "ocean", src: "assets/images/ocean.gif" },
     { id: "plane", src: "assets/images/plane.png" },
     { id: "playButton", src: "assets/images/playButton.png" },
@@ -63,7 +67,8 @@ var manifest = [
     { id: "helpButton", src: "assets/images/helpButton.png" },
     { id: "engine", src: "assets/audio/engine.ogg" },
     { id: "yay", src: "assets/audio/yay.ogg" },
-    { id: "thunder", src: "assets/audio/thunder.ogg" }
+    { id: "thunder", src: "assets/audio/thunder.ogg" },
+    { id: "bulletS", src: "assets/audio/thunder.ogg" }
 ];
 
 function Preload() {

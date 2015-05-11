@@ -22,14 +22,9 @@ var states;
             this.game.addChild(this.ocean);
 
             //main desription
-            this.des = new objects.Label(570, 300, "Move car with mouse. You cant run on grass.");
+            this.des = new objects.Label(470, 260, "There are three levels in the game.");
             this.des.font = "20px Consolas";
             this.game.addChild(this.des);
-
-            //Place label for  game bomb description
-            this.bombLabel = new objects.Label(570, 60, "Avoid the bombs or you will lose lives");
-            this.bombLabel.font = "20px Consolas";
-            this.game.addChild(this.bombLabel);
 
             //place thisimage for bomb image
             this.dbombPic = new objects.Image(40, 60, "cloud");
@@ -40,23 +35,42 @@ var states;
             this.game.addChild(this.carPic);
 
             //Place label for  game description
-            this.bombLabel = new objects.Label(570, 60, "Avoid the bombs or you will lose lives");
+            this.bombLabel = new objects.Label(570, 60, "Avoid the Enemies or you will lose lives");
             this.bombLabel.font = "20px Consolas";
             this.game.addChild(this.bombLabel);
 
-            //Place picture for roadblocks
-            this.bombPic = new objects.Image(40, 120, "island");
+            //Place label for  game description
+            this.bombLabel1 = new objects.Label(570, 90, "You Will encounter roadblocks at level 2");
+            this.bombLabel1.font = "20px Consolas";
+            this.game.addChild(this.bombLabel1);
+
+            //Place label for  game description
+            this.bombLabel2 = new objects.Label(840, 140, "Roadblocks Cost 2 lives at second level \n\nand 3 at third level.");
+            this.bombLabel2.font = "20px Consolas";
+            this.game.addChild(this.bombLabel2);
+
+            //Place picture for roablock
+            this.roadblock = new objects.Image(80, 120, "roadblock");
+            this.game.addChild(this.roadblock);
+
+            //Place picture for gasstation
+            this.bombPic = new objects.Image(80, 180, "island");
             this.game.addChild(this.bombPic);
 
             //Place label for roadblock description
-            this.bombKillerLabel = new objects.Label(755, 135, "Collect these roadblocks \n\nto score 100 points");
+            this.bombKillerLabel = new objects.Label(655, 185, "Collect these GasStation \n\nto score 100 points");
             this.bombKillerLabel.font = "20px Consolas";
             this.game.addChild(this.bombKillerLabel);
 
             //Place label to describe car
-            this.carLabel = new objects.Label(690, 250, "Move your mouse  to move the car \n\n    ");
+            this.carLabel = new objects.Label(500, 220, "Move your mouse  to move the car");
             this.carLabel.font = "20px Consolas";
             this.game.addChild(this.carLabel);
+
+            //Place label to describe game
+            this.gamei = new objects.Label(600, 350, "Player is given 5 lives at start\n\n of each level");
+            this.gamei.font = "20px Consolas";
+            this.game.addChild(this.gamei);
 
             //Play Button
             this.playButton = new objects.Button(320, 400, "playButton");
