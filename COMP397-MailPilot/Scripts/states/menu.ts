@@ -15,6 +15,7 @@ module states {
         // Game Objects 
         public game: createjs.Container;
         public ocean: objects.Ocean;
+        public car: objects.Car;
         public mailPilotLabel: objects.Label;
         public playButton: objects.Button;
         public play: boolean = false;
@@ -32,6 +33,10 @@ module states {
             this.ocean = new objects.Ocean();
             this.game.addChild(this.ocean);
 
+            //ca rbg object
+            this.car = new objects.Car();
+            this.game.addChild(this.car);
+
             //Game Over Label
             this.mailPilotLabel = new objects.Label(320, 40, "GO GO GO");
             this.mailPilotLabel.font = "60px Consolas";
@@ -39,7 +44,8 @@ module states {
             this.mailPilotLabel.regY = this.mailPilotLabel.getMeasuredLineHeight() * 0.5;
             this.game.addChild(this.mailPilotLabel);
 
-
+           // var bitmap = new createjs.Bitmap(100, 100, "assets/images/car.png");
+            
             //Play Button
             this.playButton = new objects.Button(320, 280, "playButton");
             this.playButton.on("click", this.playClicked, this);

@@ -146,6 +146,19 @@ module states {
                 currentState = constants.GAME_OVER_STATE;
                 stateChanged = true;
             }
+            if (this.scoreboard.score > 1) {
+                console.log("x");
+                this.scoreboard.active = false;
+                createjs.Sound.stop();
+                currentScore = this.scoreboard.score;
+                //if (currentScore > highScore) {
+                //    highScore = currentScore;
+                //}
+                this.game.removeAllChildren();
+                stage.removeChild(this.game);
+                currentState = constants.LEVEL_3;
+                stateChanged = true;
+            }
 
             stage.update(); // Refreshes our stage
 

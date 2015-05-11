@@ -13,10 +13,13 @@
 /// <reference path="objects/ocean.ts" />
 /// <reference path="objects/button.ts" />
 /// <reference path="objects/label.ts" />
+/// <reference path="objects/car.ts" />
 /// <reference path="states/gameplay.ts" />
 /// <reference path="states/gameover.ts" />
 /// <reference path="states/menu.ts" />
 /// <reference path="states/level2.ts" />
+/// <reference path="states/level3.ts" />
+/// <reference path="objects/fire.ts" />
 // Global game Variables
 var canvas;
 var stage;
@@ -28,6 +31,10 @@ var plane;
 
 //var lives: number = 5;
 //var score: number = 0;
+//Bullets Variable
+var bullets = [];
+var bullet;
+
 var level2Score;
 
 // Game State Variables
@@ -41,9 +48,12 @@ var menu;
 var help;
 var level_2;
 
-//var level_3: states.Level3
+var level_3;
+
 var manifest = [
-    { id: "cloud", src: "assets/images/sideplane.gif" },
+    { id: "cloud", src: "assets/images/enemy.png" },
+    { id: "car", src: "assets/images/car.png" },
+    { id: "bullet", src: "assets/images/bullet.png" },
     { id: "roadblock", src: "assets/images/island.png" },
     { id: "island", src: "assets/images/bomb.png" },
     { id: "ocean", src: "assets/images/ocean.gif" },
@@ -134,6 +144,11 @@ function changeState(state) {
         case constants.LEVEL_2:
             level_2 = new states.level2();
             currentStateFunction = level_2;
+            break;
+
+        case constants.LEVEL_3:
+            level_3 = new states.level3();
+            currentStateFunction = level_3;
             break;
     }
 }

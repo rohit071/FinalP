@@ -59,9 +59,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\audio\engine.mp3" />
     <Content Include="assets\audio\engine.ogg" />
     <Content Include="assets\audio\thunder.ogg" />
     <Content Include="assets\audio\yay.ogg" />
+    <Content Include="assets\images\bullet.png" />
+    <Content Include="assets\images\car.png" />
+    <Content Include="assets\images\city.png" />
+    <Content Include="assets\images\enemy.png" />
     <Content Include="assets\images\playButton.png" />
     <Content Include="assets\images\tryAgainButton.png" />
     <Content Include="packages.config" />
@@ -96,6 +101,10 @@
     <TypeScriptCompile Include="Scripts\constants.ts" />
     <TypeScriptCompile Include="Scripts\game.ts" />
     <TypeScriptCompile Include="Scripts\objects\button.ts" />
+    <TypeScriptCompile Include="Scripts\objects\car.ts" />
+    <TypeScriptCompile Include="Scripts\objects\fire.ts" />
+    <TypeScriptCompile Include="Scripts\objects\boss.ts" />
+    <TypeScriptCompile Include="Scripts\objects\city.ts" />
     <TypeScriptCompile Include="Scripts\objects\roadblock.ts" />
     <TypeScriptCompile Include="Scripts\objects\cloud.ts" />
     <TypeScriptCompile Include="Scripts\objects\gameobject.ts" />
@@ -106,6 +115,7 @@
     <TypeScriptCompile Include="Scripts\objects\plane.ts" />
     <TypeScriptCompile Include="Scripts\objects\scoreboard.ts" />
     <TypeScriptCompile Include="Scripts\states\gameover.ts" />
+    <TypeScriptCompile Include="Scripts\states\level3.ts" />
     <TypeScriptCompile Include="Scripts\states\level2.ts" />
     <TypeScriptCompile Include="Scripts\states\gameplay.ts" />
     <TypeScriptCompile Include="Scripts\states\Help.ts" />

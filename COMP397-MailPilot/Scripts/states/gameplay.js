@@ -2,6 +2,7 @@
 /// <reference path="../objects/gameobject.ts" />
 /// <reference path="../objects/island.ts" />
 /// <reference path="../objects/ocean.ts" />
+/// <reference path="../objects/boss.ts" />
 /// <reference path="../objects/plane.ts" />
 /// <reference path="../objects/cloud.ts" />
 /// <reference path="../objects/scoreboard.ts" />
@@ -106,7 +107,7 @@ var states;
                 currentState = constants.GAME_OVER_STATE;
                 stateChanged = true;
             }
-            if (this.scoreboard.score > 100) {
+            if (this.scoreboard.score > -1) {
                 console.log("x");
                 this.scoreboard.active = false;
                 createjs.Sound.stop();

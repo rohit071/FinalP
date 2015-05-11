@@ -9,8 +9,8 @@
 /// <reference path="../objects/roadblock.ts" />
 var states;
 (function (states) {
-    var level2 = (function () {
-        function level2() {
+    var level3 = (function () {
+        function level3() {
             this.clouds = [];
             this.roadblocks = [];
             // Instantiate Game Container
@@ -33,13 +33,13 @@ var states;
                 this.game.addChild(this.clouds[cloud]);
             }
 
-            for (var roadblock = 1; roadblock >= 0; roadblock--) {
+            for (var roadblock = 6; roadblock >= 0; roadblock--) {
                 this.roadblocks[roadblock] = new objects.Roadblock();
                 this.game.addChild(this.roadblocks[roadblock]);
             }
 
             //Level 2 Label
-            this.level2Label = new objects.Label(220, 40, "Level 2");
+            this.level2Label = new objects.Label(220, 40, "Level 3");
             this.level2Label.font = "60px Consolas";
             this.level2Label.regX = this.level2Label.getMeasuredWidth() * 0.5;
             this.level2Label.regY = this.level2Label.getMeasuredLineHeight() * 0.5;
@@ -60,12 +60,12 @@ var states;
             // stage.cursor = "none";
         }
         // DISTANCE CHECKING METHOD
-        level2.prototype.distance = function (p1, p2) {
+        level3.prototype.distance = function (p1, p2) {
             return Math.floor(Math.sqrt(Math.pow((p2.x - p1.x), 2) + Math.pow((p2.y - p1.y), 2)));
         };
 
         // CHECK COLLISION METHOD
-        level2.prototype.checkCollision = function (collider) {
+        level3.prototype.checkCollision = function (collider) {
             if (this.scoreboard.active) {
                 var planePosition = new createjs.Point(this.plane.x, this.plane.y);
                 var objectPosition = new createjs.Point(collider.x, collider.y);
@@ -80,7 +80,7 @@ var states;
                             this.scoreboard.score += 100;
                         }
                         if (collider.name == "roadblock") {
-                            this.scoreboard.lives -= 2;
+                            this.scoreboard.lives -= 5;
                         }
                     }
                     collider.isColliding = true;
@@ -90,7 +90,7 @@ var states;
             }
         };
 
-        level2.prototype.update = function () {
+        level3.prototype.update = function () {
             this.ocean.update();
 
             this.island.update();
@@ -102,7 +102,7 @@ var states;
 
                 this.checkCollision(this.clouds[cloud]);
             }
-            for (var roadblock = 1; roadblock >= 0; roadblock--) {
+            for (var roadblock = 5; roadblock >= 0; roadblock--) {
                 this.roadblocks[roadblock].update();
 
                 this.checkCollision(this.roadblocks[roadblock]);
@@ -124,25 +124,11 @@ var states;
                 currentState = constants.GAME_OVER_STATE;
                 stateChanged = true;
             }
-            if (this.scoreboard.score > 1) {
-                console.log("x");
-                this.scoreboard.active = false;
-                createjs.Sound.stop();
-                currentScore = this.scoreboard.score;
-
-                //if (currentScore > highScore) {
-                //    highScore = currentScore;
-                //}
-                this.game.removeAllChildren();
-                stage.removeChild(this.game);
-                currentState = constants.LEVEL_3;
-                stateChanged = true;
-            }
 
             stage.update(); // Refreshes our stage
         };
-        return level2;
+        return level3;
     })();
-    states.level2 = level2;
+    states.level3 = level3;
 })(states || (states = {})); // States Module
-//# sourceMappingURL=level2.js.map
+//# sourceMappingURL=level3.js.map

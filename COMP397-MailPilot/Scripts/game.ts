@@ -12,14 +12,19 @@
 /// <reference path="objects/plane.ts" />
 /// <reference path="objects/island.ts" />
 /// <reference path="objects/cloud.ts" />
+/// <reference path="objects/city.ts" />
 /// <reference path="objects/ocean.ts" />
 /// <reference path="objects/button.ts" />
 /// <reference path="objects/label.ts" />
-
+/// <reference path="objects/car.ts" />
+/// <reference path="objects/fire.ts" />
+/// <reference path="objects/boss.ts" />
 /// <reference path="states/gameplay.ts" />
 /// <reference path="states/gameover.ts" />
 /// <reference path="states/menu.ts" />
 /// <reference path="states/level2.ts" />
+/// <reference path="states/level3.ts" />
+
 
 
 // Global game Variables
@@ -34,6 +39,10 @@ var plane: objects.Plane;
 //var lives: number = 5;
 //var score: number = 0;
 
+//Bullets Variable
+var bullets: objects.Fire[] = [];
+var bullet: objects.Fire;
+
 var level2Score;
 // Game State Variables
 var currentState: number;
@@ -46,10 +55,14 @@ var menu: states.Menu;
 var help: states.Help
 var level_2: states.level2;
 
-//var level_3: states.Level3
+var level_3: states.level3;
 
 var manifest = [
-    { id: "cloud", src: "assets/images/sideplane.gif" },
+    { id: "cloud", src: "assets/images/enemy.png" },
+    { id: "car", src: "assets/images/car.png" },
+    { id: "boss", src: "assets/images/car.png" },
+    { id: "city", src: "assets/images/city.png" },
+    { id: "bullet", src: "assets/images/bullet.png" },
     { id: "roadblock", src: "assets/images/island.png" },
     { id: "island", src: "assets/images/bomb.png" },
     { id: "ocean", src: "assets/images/ocean.gif" },
@@ -60,6 +73,7 @@ var manifest = [
     { id: "engine", src: "assets/audio/engine.ogg" },
     { id: "yay", src: "assets/audio/yay.ogg" },
     { id: "thunder", src: "assets/audio/thunder.ogg" }
+    { id: "bulletS", src: "assets/audiothunder.ogg" }
 ];
 
 
@@ -151,6 +165,11 @@ function changeState(state: number): void {
         case constants.LEVEL_2:
             level_2 = new states.level2();
             currentStateFunction = level_2;
+            break;
+
+        case constants.LEVEL_3:
+            level_3 = new states.level3();
+            currentStateFunction = level_3;
             break;
     }
 }
